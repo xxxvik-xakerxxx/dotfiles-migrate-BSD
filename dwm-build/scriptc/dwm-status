@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 #### dependencies:
 # 1) feh --> background
@@ -20,9 +20,9 @@ do
    battery=$(acpitool -b | cut -d"," -f2 | cut -d" " -f2)
    ip=$(iwgetid -r)
    ip="${ip}"
-   vol=$(amixer get Master | egrep "^  Mono"| cut -d"[" -f 2 | cut -d"%" -f 1)
+   vol=$(amixer get Master | egrep "^  Front Left"| cut -d"[" -f 2 | cut -d"%" -f 1)
    vol="${vol}"
-   mute=$(amixer get Master | egrep "^  Mono"| cut -d"[" -f 4 | cut -d"]" -f 1)
+   mute=$(amixer get Master | egrep "^  Front Left"| cut -d"[" -f 4 | cut -d"]" -f 1)
    tmp="off"
    if [ "$mute" = "$tmp" ]
 	then
