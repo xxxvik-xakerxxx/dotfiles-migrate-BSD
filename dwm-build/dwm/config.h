@@ -36,7 +36,7 @@ static const unsigned int gappx				= 12;	/* gap pixel between windows */
 static const unsigned int systraypinning 	= 0;	/* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing 	= 2;	/* systray spacing */
 static const int systraypinningfailfirst 	= 1;	/* 1: if pinning fails, display systray on the first monitor, 0: display systray on the last monitor*/
-static const int showsystray 				= 1;	/* 0 means no systray */
+static const int showsystray 				= 0;	/* 0 means no systray */
 static const int showbar 					= 1;	/* 0 means no bar */
 static const int topbar 					= 1;	/* 0 means bottom bar */
 
@@ -86,7 +86,7 @@ static const Rule rules[] = {
 	 */
 	/* class			instance	title		tags mask	isfloating		monitor */
 	{ "Gimp",			NULL,		NULL,		0,				0,			-1 },
-	{ "Firefox",		NULL,		NULL,		1 << 0,			0,			-1 },
+	{ "Midori",		NULL,		NULL,		1 << 0,			0,			-1 },
 	{ "Steam",			NULL,		NULL,		1 << 4,			1,			-1 },
 	{ "Nitrogen",		NULL,		NULL,		0,			  	1,			-1 },
 	{ "Lxappearance",	NULL,		NULL,		0,				1,			-1 },
@@ -109,7 +109,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -123,6 +123,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] 			= "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] 		= { "dmenu_run", NULL };
 static const char *termcmd[] 		= { "st", NULL };
+static const char *browser[] 		= { "midori", NULL };
+static const char *file_m[] 		= { "pcmanfm", NULL };
+static const char *telegram[] 		= { "sh .bin/telegram", NULL };
 static const char *volup[] 			= { "pulseaudio-ctl", "up", NULL };
 static const char *voldown[] 		= { "pulseaudio-ctl", "down", NULL };
 static const char *voltoggle[] 		= { "pulseaudio-ctl", "mute", NULL };
@@ -133,6 +136,9 @@ static const char *screenshot[] 	= { "screenshot", NULL};
 static Key keys[] = {
 	/* modifier						key							function			argument */
 	{ MODKEY,						XK_r,						spawn,				{.v = dmenucmd } },
+	{ MODKEY,						XK_z,						spawn,				{.v = browser } },
+	{ MODKEY,						XK_x,						spawn,				{.v = file_m } },
+	{ MODKEY,						XK_c,						spawn,				{.v = telegram } },
 	{ MODKEY,						XK_Return,					spawn,				{.v = termcmd } },
 	{ MODKEY|ShiftMask,				XK_b,						togglebar,			{0} },
 	{ MODKEY,						XK_Right,					focusstack,			{.i = +1 } },
