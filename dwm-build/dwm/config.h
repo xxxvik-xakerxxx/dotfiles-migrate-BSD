@@ -122,13 +122,13 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] 			= "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] 		= { "dmenu_run", NULL };
-static const char *termcmd[] 		= { "st", NULL };
-static const char *browser[] 		= { "midori", NULL };
+static const char *termcmd[] 		= { "evilvte", NULL };
+static const char *browser[] 		= { "./.nsgtk", NULL };
 static const char *file_m[] 		= { "pcmanfm", NULL };
-static const char *telegram[] 		= { "sh .bin/telegram", NULL };
-static const char *volup[] 			= { "pulseaudio-ctl", "up", NULL };
-static const char *voldown[] 		= { "pulseaudio-ctl", "down", NULL };
-static const char *voltoggle[] 		= { "pulseaudio-ctl", "mute", NULL };
+static const char *telegram[] 		= { "sh", ".bin/telegram", NULL };
+static const char *volup[] 			= { "amixer", "set", "Master", "3+", NULL };
+static const char *voldown[] 		= { "amixer", "set", "Master", "3-", NULL };
+static const char *voltoggle[] 		= { "amixer", "set", "Master", "toggle", NULL };
 static const char *togtouchpad[] 	= { "touchpad", NULL };
 static const char *screenshot[] 	= { "screenshot", NULL};
 
