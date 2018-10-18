@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rofi -sidebar-mode \
+-modi run,drun,window \
+-lines 12 \
+-padding 18 \
+-width 60 \
+-location 0 \
+-show drun \
+-columns 3 \
+-font "Metis 9" -color-window "#0c0e13,#000103" -color-normal "#0c0e13, #f5f5f5, #000103, #4a1328, #f5f5f5"

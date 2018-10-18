@@ -122,6 +122,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] 			= "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] 		= { "dmenu_run", NULL };
+static const char *rofi[] 		    = { "sh", "./bin/rofia", NULL };
 static const char *termcmd[] 		= { "evilvte", NULL };
 static const char *browser[] 		= { "./.nsgtk", NULL };
 static const char *file_m[] 		= { "pcmanfm", NULL };
@@ -136,6 +137,7 @@ static const char *screenshot[] 	= { "screenshot", NULL};
 static Key keys[] = {
 	/* modifier						key							function			argument */
 	{ MODKEY,						XK_r,						spawn,				{.v = dmenucmd } },
+	{ MODKEY|ShiftMask,				XK_r,						spawn,				{.v = rofi } },
 	{ MODKEY,						XK_z,						spawn,				{.v = browser } },
 	{ MODKEY,						XK_x,						spawn,				{.v = file_m } },
 	{ MODKEY,						XK_c,						spawn,				{.v = telegram } },
@@ -187,7 +189,7 @@ static Key keys[] = {
 	TAGKEYS(						XK_8,						7)
 	TAGKEYS(						XK_9,						8)
 	{ MODKEY|ShiftMask,				XK_q,						quit,				{0} },
-	{ MODKEY|ShiftMask,				XK_r,						self_restart,		{0} },
+	{ MODKEY|ShiftMask,				XK_z,						self_restart,		{0} },
     { 0,							XK_Print,					spawn,				{.v = screenshot } },
 	{ 0,							XF86AudioRaiseVolume,		spawn,				{.v = volup } },
     { 0,							XF86AudioLowerVolume,		spawn,				{.v = voldown } },
