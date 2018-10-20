@@ -2,12 +2,12 @@ Dotfile DWM
 ===========
 
 This is my favorite config at the moment:
-	+ WM: DWM
-	+ Terminal: Evilvte, ST
-	+ Menu: Rofi, Dmenu
-	+ Indicator: Dwm-status (bash script)
-	+ Browser: Firefox
-	+ Editor: Vim, SublimeText3, Emacs
+...	- WM: DWM
+...	- Terminal: Evilvte, ST
+...	- Menu: Rofi, Dmenu
+...	- Indicator: Dwm-status (bash script)
+...	- Browser: Firefox
+...	- Editor: Vim, SublimeText3, Emacs
 ---
 
 ## Screan
@@ -16,7 +16,7 @@ This is my favorite config at the moment:
 ---
 ![Image](rofi.png "rofi")
 ---
-![Image](screanfetch.png "scrftch")
+![Image](screnfetch.png "scrftch")
 ---
 ![Image](firefox.png "firefox")
 ---
