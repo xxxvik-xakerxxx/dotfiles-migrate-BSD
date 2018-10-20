@@ -122,7 +122,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] 			= "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] 		= { "dmenu_run", NULL };
-static const char *rofi[] 		    = { "sh", "./bin/rofia", NULL };
+static const char *rofi[] 		    = { "sh", ".bin/rofia", NULL };
 static const char *termcmd[] 		= { "evilvte", NULL };
 static const char *browser[] 		= { "./.nsgtk", NULL };
 static const char *file_m[] 		= { "pcmanfm", NULL };

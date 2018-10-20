@@ -12,22 +12,22 @@
 #		--> update time is not in syc with the system time --> seconds display may look laggy
 # 2) network is looking for the strings 'eth0' and 'wlan0' --> easy editable
 
-#feh --bg-scale wallpaper.jpg
+feh --bg-scale /home/vh/.wallpaper.png
+
+#$battery
 
 while true
 do
    lang=$(xset -q | while read -r line ; do [[ $line = *Group* ]] && line=${line//13*} && ([[ $line = *off* ]] && echo 'EN ' || echo 'RU ') && exit ; done)
-   battery=$(acpitool -b | cut -d"," -f2 | cut -d" " -f2)
-   ip=$(iwgetid -r)
-   ip="${ip}"
-   vol=$(amixer get Master | egrep "^  Front Left"| cut -d"[" -f 2 | cut -d"%" -f 1)
-   vol="${vol}"
-   mute=$(amixer get Master | egrep "^  Front Left"| cut -d"[" -f 4 | cut -d"]" -f 1)
+   #battery=$(echo -e "\ue040 $(acpitool -b | cut -d"," -f2 | cut -d" " -f2)")
+   ip=$(echo -e "\ue048 $(iwgetid -r)")
+   vol=$(echo -e "\ue05d $(amixer get Master | egrep "^  Mono"| cut -d"[" -f 2 | cut -d"%" -f 1)")
+   mute=$(amixer get Master | egrep "^  Mono"| cut -d"[" -f 4 | cut -d"]" -f 1)
    tmp="off"
    if [ "$mute" = "$tmp" ]
 	then
 	vol="mute"
    fi
-   xsetroot -name "$(echo -e "\ue05d")$vol  $(echo -e "\ue040")$battery  $(echo -e "\ue048")$ip  $lang $(echo -e "\ue128")$(date +"%H:%M")"
+   xsetroot -name "$vol $ip $lang $(echo -e "\ue128$(date +"%H:%M")")"
    sleep 1    # Update time
 done &
