@@ -12,7 +12,7 @@ This is my favorite config at the moment.
    *	Indicator: Dwm-status (bash script)
    *	Browser: Firefox
    *	Editor: Vim, SublimeText3, Emacs
----
+
 
 ## Screan
 
